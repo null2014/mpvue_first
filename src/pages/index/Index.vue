@@ -8,7 +8,7 @@
     <open-data type="userAvatarUrl"></open-data>
     </div>
     <open-data type="userNickName"></open-data>
-    <p>mpvue小程序</p>
+    <button @tap="toHomePage">mpvue小程序</button>
   </div>
   </div>
 </template>
@@ -18,8 +18,8 @@ export default {
   name:"Index",
   data(){
     return{
-    userInfo:{},
-    isShow:false
+    //userInfo:{},
+    //isShow:false
   }
   },
   beforeMount() {
@@ -27,22 +27,13 @@ export default {
     // this.isShow=true;
   },
   methods:{
-    // handleGetUserInfo(){
-    //   wx.getUserInfo({//wx.getUserInfo 接口直接弹出授权框的开发方式将逐步不再支持
-    //     success:(data)=>{
-    //       console.log(data)
-    //       this.userInfo = data.userInfo
-    //     },
-    //     fail:(err)=>{
-    //       console.log(err)
-    //     }
-    //   })
-    // },
-    // getUserInfo(data){
-    //   if(data.mp.detail.rawData){
-    //     handleGetUserInfo()
-    //   }
-    // }
+    toHomePage(){
+      let url='/pages/home/main'
+      // wx.navigateTo({url})
+      wx.switchTab({url})
+      console.log(url)
+    }
+
   }
 
 }
